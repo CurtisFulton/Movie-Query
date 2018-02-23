@@ -18,6 +18,8 @@ const HeaderContainer = styles.header`
 	background: #455a64;
 	background: linear-gradient(to right, #455a64 0%, #546e7a 50%, #455a64 100%);
 
+	overflow: hidden;
+
 	a {
 		text-decoration: none;
 		color: inherit;

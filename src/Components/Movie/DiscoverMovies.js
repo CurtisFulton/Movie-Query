@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import MovieCard from './MovieCard';
 
 const MovieList = styled.section`
-	width: 75%;
+	width: 60em;
 	margin: 0 auto;
 	margin-top: 2em;
 `

@@ -30,7 +30,7 @@ class PopularActors extends Component {
 
 	render() {
 		return (
-			<Gallery width="80%" columnWidth="250px">
+			<Gallery width="80%" columnWidth="250px" dynamic>
 				{ this.state.actors }
 			</Gallery>
 		);

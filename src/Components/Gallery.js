@@ -18,8 +18,9 @@ const GalleryContainer = styled.section`
 
 		grid-column-gap: 0.75em;
 		grid-row-gap: 0.75em;
+		padding: 0.5em 1em;
 
-		grid-template-columns: repeat(auto-fill, minmax(${props => props.columnWidth}, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(${props => props.columnWidth}, ${props => props.dynamic ? "1fr" : props.columnWidth}));
 	}
 `
 
@@ -36,7 +37,7 @@ class Gallery extends Component {
 
 	render() {
 		return (
-			<GalleryContainer width={this.props.width} columnWidth={this.props.columnWidth}>
+			<GalleryContainer width={this.props.width} columnWidth={this.props.columnWidth} dynamic={this.props.dynamic}>
 				{ this.props.children }
 			</GalleryContainer>
 		);

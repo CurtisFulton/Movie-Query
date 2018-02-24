@@ -49,9 +49,8 @@ const NotFound = () =>
 	</div>
 
 const InDevelopment = () =>
-	<div>
-		<h3>404 page not found</h3>
-		<p>The page you are looking for is still under development</p>
+	<div style={{textAlign: "center"}}>
+		<h3>This page is still under construction</h3>
 	</div>
 
 export default App;

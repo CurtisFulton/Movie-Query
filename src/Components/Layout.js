@@ -19,6 +19,7 @@ class Layout extends Component {
 		return (
 			<LayoutContainer>
 				<Header title="Movie Query">
+					<Link to="/">Home</Link>
 					<Link to="/movies">Movies</Link>
 					<Link to="/actors">Actors</Link>
 					<Link to="/search">Search</Link>

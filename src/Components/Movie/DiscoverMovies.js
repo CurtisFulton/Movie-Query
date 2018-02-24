@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
+import Gallery from '../Gallery';
 import MovieCard from './MovieCard';
 
-const MovieList = styled.section`
-	width: 60em;
-	margin: 0 auto;
-	margin-top: 2em;
-`
 
 class DiscoverMovies extends Component {
 	constructor() {
@@ -21,11 +16,9 @@ class DiscoverMovies extends Component {
 		fetch('https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&page=1&api_key=' + process.env.REACT_APP_API_KEY)
 		.then(results => results.json())
 		.then(data => {
-			if (!data) // Check that any data was returned.
-				return;
-
 			let discoverMovies = data.results.map(movie => {
-				return <MovieCard key={movie.title} title={movie.title} description={movie.overview}></MovieCard> 
+
+				return <MovieCard key={movie.title} movieInfo={movie}></MovieCard> 
 			})
 
 			this.setState({ movies : discoverMovies });
@@ -33,11 +26,27 @@ class DiscoverMovies extends Component {
 
 	}
 
-	render() {
+	render() {		
+		let gallery = this.state.movies;
+
+		// Create a temporary render
+		if (gallery.length == 0) {
+			let movie = {
+				title : "Loading Movie",
+				release_date : "",
+				overview : "Loading Description"
+			}
+
+			for (let i = 0; i < 25; i++) {
+				gallery.push(<MovieCard key={i} movieInfo={movie}></MovieCard>); 
+			}
+		}
+
+
 		return (
-			<MovieList>
-				{ this.state.movies }
-			</MovieList>
+			<Gallery width="80%" columnWidth="400px" dynamic>
+				{ gallery }
+			</Gallery>
 		);
 	}
 }

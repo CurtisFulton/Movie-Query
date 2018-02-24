@@ -8,12 +8,12 @@ const Card = styled.div`
 	max-width: 100%;
 	background-color: hsl(0, 0%, 95%);
 
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 
-	transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s ease-in-out;
 
 	&:hover {
-		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+		box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 		cursor: pointer;
 	}
 `
@@ -68,7 +68,7 @@ class ActorCard extends Component {
 	render() {
 		return (
 			<Card>
-				<ImageContainer width="100%" height="325px" src={ "https://image.tmdb.org/t/p/w300" + this.props.profileURL }></ImageContainer>
+				<ImageContainer width="100%" height="auto" src={ "https://image.tmdb.org/t/p/w300" + this.props.profileURL }></ImageContainer>
 				<ActorName>{this.props.name}</ActorName>
 				<KnownFor>{ this.state.knownFor }</KnownFor>
 			</Card>

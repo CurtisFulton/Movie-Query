@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
 class ImageContainer extends Component {
 	constructor() {
@@ -18,17 +17,20 @@ class ImageContainer extends Component {
 			position: "relative",
 			width: this.props.width,
 			height: this.props.height,
-			paddingBottom: "10%",
-			overflow: "hidden"
+			paddingBottom: "0%" || this.props.padding,
+			overflow: "hidden",
+
+			gridArea: "img"
 		}
 
 		const imgStyle = {
 			width: "100%",
+			height: "100%"
 		}
 
 		return (
 			<div style={divStyle}>
-				<img src={this.props.src} style={imgStyle}></img>
+				<img src={this.props.src} style={imgStyle} padding={this.props.padding}></img>
 			</div>
 		);
 	}

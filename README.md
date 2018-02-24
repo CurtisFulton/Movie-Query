@@ -6,12 +6,26 @@ A React SPA using [the movie database API](https://www.themoviedb.org) to displa
 
 ### Planned features:
 
-- Movie lookup
+- Movie lookup and details
+- Actor lookup and details
+- Advanced Search Options
+- Find popular actors
+- Find popular movies
 - Compare two (or more) movies casts for actors in both movies
 
 ## Live Code
 
-This project is still under development. Once it is completed the final webpage can be found at https://curtisfulton.github.io/Movie-Query.
+This project is still under development. The current version can be found at https://curtisfulton.github.io/Movie-Query. 
+
+### Version 1
+
+This is still a very early build. Currently there are 3 pages that work.
+
+- "Home" shows trending movies. 
+- "Movies" shows popular movies (which are usually pretty similar to the trending ones)
+- "Actors" shows popular actors
+
+- "Search" Is currently not implemented.
 
 ## Skills/Technologies
 
